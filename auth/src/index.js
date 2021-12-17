@@ -10,7 +10,7 @@ import { auth } from "./utils/rockets";
 
 ReactDOM.render(
   <React.StrictMode>
-    <RApolloProvider auth={auth} gqlEndpoint="https://hasura-zdfey9g.rocketgraph.app/v1/graphql">
+    <RApolloProvider auth={auth} gqlEndpoint="https://hasura-6khqdzs.rocketgraph.app/v1/graphql">
       <Router>
           <Switch>
             <Route exact path="/login">

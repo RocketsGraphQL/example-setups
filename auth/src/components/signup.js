@@ -28,18 +28,20 @@ export function Signup(props) {
       <h1>Signup</h1>
       <form onSubmit={handleSubmit}>
         <input
+          id="inputUserEmail"
           type="email"
           placeholder="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
+          id="inputUserPassword"
           type="password"
           placeholder="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button>Signup</button>
+        <button id="signupButton">Signup</button>
       </form>
     </div>
   );

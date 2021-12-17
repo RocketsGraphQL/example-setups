@@ -2,7 +2,7 @@ import { createClient } from "@kaushik_varanasi/rocketsgraphql-js-sdk";
 import Cookies from 'js-cookie';
 
 const config = {
-  baseURL: "https://backend-ZDFEY9G.rocketgraph.app/api",
+  baseURL: "https://backend-6KHQDZS.rocketgraph.app/api",
 };
 
 if (Cookies.get("jwt")) {

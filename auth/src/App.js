@@ -26,6 +26,7 @@ function App() {
   const [insertTodo] = useMutation(INSERT_TODO);
   const [todoName, setTodoName] = useState("");
 
+  console.log("todos: ", data);
   if (loading) {
     return <div>Loading</div>;
   }
@@ -55,18 +56,19 @@ function App() {
           }}
         >
           <input
+            id="inputTodo"
             type="text"
             placeholder="todo"
             value={todoName}
             onChange={(e) => setTodoName(e.target.value)}
           />
-          <button>Create todo</button>
+          <button id="createTodo">Create todo</button>
         </form>
       </div>
-      {!data ? (
+      {!data || !data.todos || !data.todos.length ? (
         "no data"
       ) : (
-        <ul>
+        <ul id="todosList">
           {data.todos.map((todo) => {
             return <li key={todo.id}>{todo.name}</li>;
           })}
