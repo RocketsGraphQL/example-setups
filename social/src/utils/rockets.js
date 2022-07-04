@@ -2,12 +2,13 @@ import { createClient } from "@rocketgraphql/rocketgraph-js-sdk";
 import Cookies from 'js-cookie';
 
 const config = {
-  baseURL: "https://backend-1CBIJOG.rocketgraph.app/api",
+  baseURL: "https://backend-QKCJRSQ.rocketgraph.app/api",
 };
 
 console.log("loading from extra");
+
 if (Cookies.get("jwt")) {
-  console.log("got it");
+  console.log("got it", Cookies.get("jwt"));
 } else {
    console.log("not got it");
 }

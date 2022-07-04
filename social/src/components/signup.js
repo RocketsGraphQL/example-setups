@@ -12,7 +12,9 @@ export function Signup(props) {
 
     // login
     try {
-      await auth.register({email, password});
+      const {providerUrl, redirectUrl, success} = await auth.signIn({email, password, provider: "github"});
+      console.log("github data: ", providerUrl, redirectUrl, success);
+      window.location.href = providerUrl;
     } catch (error) {
       alert("error signing up");
       console.error(error);
@@ -24,23 +26,7 @@ export function Signup(props) {
   return (
     <div>
       <h1>Signup</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          id="inputUserEmail"
-          type="email"
-          placeholder="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          id="inputUserPassword"
-          type="password"
-          placeholder="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button id="signupButton">Signup</button>
-      </form>
+        <button id="signupButton" onClick={(e) => handleSubmit(e)}>Signup with Github</button>
     </div>
   );
 }
